@@ -1,4 +1,4 @@
-
+!DOCTYPE html>
 !DOCTYPE html>
 <html lang="fr">
 <head>
@@ -937,6 +937,387 @@ input[type="date"]{
   transform:scale(1.08);
   opacity:.85;
 }
+
+/* =========================
+   SERVICES PREMIUM EFFECTS
+========================= */
+
+.cards{
+  display:grid;
+  gap:35px;
+}
+
+/* CARTE */
+.card{
+  position:relative;
+  overflow:hidden;
+
+  border-radius:34px;
+
+  background:
+    rgba(255,255,255,.78);
+
+  backdrop-filter:blur(14px);
+
+  border:1px solid rgba(178,138,104,.18);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.08);
+
+  transition:
+    transform .6s ease,
+    box-shadow .6s ease,
+    border .5s ease;
+
+  animation:
+    serviceAppear 1s ease forwards;
+
+  opacity:0;
+}
+
+/* délais */
+.card:nth-child(1){animation-delay:.1s;}
+.card:nth-child(2){animation-delay:.25s;}
+.card:nth-child(3){animation-delay:.4s;}
+.card:nth-child(4){animation-delay:.55s;}
+.card:nth-child(5){animation-delay:.7s;}
+
+/* APPARITION */
+@keyframes serviceAppear{
+  from{
+    opacity:0;
+    transform:
+      translateY(70px)
+      scale(.94);
+  }
+
+  to{
+    opacity:1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+/* IMAGE */
+.card img{
+  width:100%;
+  height:340px;
+
+  object-fit:cover;
+
+  transition:
+    transform 1s ease,
+    filter .8s ease;
+}
+
+/* CONTENU */
+.card-content{
+  position:relative;
+  z-index:3;
+
+  padding:38px;
+}
+
+/* TITRE */
+.card-content h3{
+  font-size:34px;
+
+  margin-bottom:14px;
+
+  color:#1d1b1a;
+
+  transition:.4s;
+}
+
+/* TEXTE */
+.card-content p{
+  color:#6d635d;
+  line-height:1.9;
+
+  transition:.4s;
+}
+
+/* LUMIÈRE LUXE */
+.card::before{
+  content:"";
+
+  position:absolute;
+  top:-120%;
+  left:-30%;
+
+  width:60%;
+  height:300%;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(212,175,55,.20),
+      transparent
+    );
+
+  transform:
+    rotate(25deg)
+    translateX(-250%);
+
+  animation:
+    luxuryShine 5s infinite;
+}
+
+@keyframes luxuryShine{
+
+  0%{
+    transform:
+      rotate(25deg)
+      translateX(-250%);
+    opacity:0;
+  }
+
+  20%{
+    opacity:1;
+  }
+
+  60%{
+    transform:
+      rotate(25deg)
+      translateX(350%);
+    opacity:1;
+  }
+
+  100%{
+    transform:
+      rotate(25deg)
+      translateX(350%);
+    opacity:0;
+  }
+}
+
+/* HOVER */
+.card:hover{
+
+  transform:
+    translateY(-18px)
+    scale(1.015);
+
+  border:1px solid rgba(212,175,55,.35);
+
+  box-shadow:
+    0 35px 90px rgba(178,138,104,.22),
+    0 0 40px rgba(212,175,55,.08);
+}
+
+/* IMAGE HOVER */
+.card:hover img{
+
+  transform:scale(1.08);
+
+  filter:
+    brightness(.82)
+    saturate(1.12);
+}
+
+/* TITRE HOVER */
+.card:hover h3{
+  color:#b28a68;
+  transform:translateY(-3px);
+}
+
+/* TEXTE HOVER */
+.card:hover p{
+  transform:translateY(-2px);
+}
+
+/* glow subtil */
+.card::after{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  border-radius:34px;
+
+  box-shadow:
+    inset 0 0 0 rgba(255,255,255,0);
+
+  transition:.5s;
+}
+
+.card:hover::after{
+  box-shadow:
+    inset 0 0 120px rgba(255,255,255,.06);
+}
+
+/* MOBILE */
+@media(max-width:850px){
+
+  .card img{
+    height:260px;
+  }
+
+  .card-content{
+    padding:28px;
+  }
+
+  .card-content h3{
+    font-size:28px;
+  }
+
+}
+/* =========================
+   GALERIE INSTAGRAM BUTTON
+========================= */
+
+/* =========================
+   INSTAGRAM SECTION LUXE
+========================= */
+
+./* =========================
+   SECTION INSTAGRAM LUXE
+========================= */
+
+/* =========================
+   SECTION INSTAGRAM LUXE
+========================= */
+.gallery-more{
+  width:100%;
+  padding:90px 20px;
+  text-align:center;
+  position:relative;
+}
+.gallery-quote{
+  max-width:1000px;
+  margin:0 auto;
+  position:relative;
+  text-align:center;
+}
+
+.gallery-quote h2{
+
+  font-family:'Playfair Display', serif;
+
+  font-size:42px;
+
+  line-height:1.2;
+
+  color:#3f322c;
+
+  font-weight:700;
+
+  margin:0 0 24px;
+}
+
+.gallery-quote p{
+
+  font-family:'Playfair Display', serif;
+
+  font-size:20px;
+
+  line-height:1.8;
+
+  color:#5d5048;
+
+  max-width:780px;
+
+  margin:0 auto;
+}
+
+.gallery-quote p span{
+  color:#c89a4b;
+  font-weight:600;
+}
+
+.big-quote{
+  position:absolute;
+  font-family:'Playfair Display', serif;
+  font-size:150px;
+  color:#d4af37;
+  line-height:1;
+  pointer-events:none;
+}
+
+.big-quote.left{
+  left:-80px;
+  top:20px;
+}
+
+.big-quote.right{
+  right:-80px;
+  top:160px;
+}
+
+.quote-line{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  margin:40px 0 35px;
+  color:#c89a4b;
+}
+
+.quote-line span{
+  width:80px;
+  height:1px;
+  background:#c89a4b;
+}
+
+.insta-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:17px 40px;
+  border-radius:60px;
+  background:#b28a68;
+  color:white;
+  font-weight:600;
+  text-decoration:none;
+}
+
+@media(max-width:850px){
+  .gallery-quote h2{
+    font-size:36px;
+  }
+
+  .gallery-quote p{
+    font-size:18px;
+  }
+
+  .big-quote{
+    display:none;
+  }
+}
+/* CONTENEUR DU TITRE */
+.title-wrapper{
+  position:relative;
+  display:inline-block;
+}
+
+/* GUILLEMETS */
+.big-quote{
+  position:absolute;
+
+  font-family:'Playfair Display', serif;
+
+  font-size:120px;
+
+  color:#d4af37;
+
+  line-height:1;
+
+  pointer-events:none;
+}
+
+/* GUILLEMET GAUCHE */
+.big-quote.left{
+  left:-85px;
+  top:-5px;
+}
+
+/* GUILLEMET DROIT */
+.big-quote.right{
+  right:-85px;
+  bottom:-15px;
+}
   </style>
 </head>
 <body>
@@ -984,15 +1365,87 @@ input[type="date"]{
 </section>
 
 <section class="container" id="services">
-  <div class="section-title reveal"><span>Nos prestations</span><h2>Services beauté</h2></div>
-  <div class="card reveal-zoom-delay">
-    <div class="card"><img class="reveal-left" src="coiffure4.png"><div class="card-content"><h3>Coiffure & Brushing</h3><p>Coupes modernes, brushing glamour, coiffures élégantes pour vos journées et événements.</p></div></div>
-    <div class="card"><img class="reveal-left" src="ongle.png"><div class="card-content"><h3>Onglerie</h3><p>Manucure, pédicure, gel, semi-permanent et nail art chic pour des mains parfaites.</p></div></div>
-    <div class="card"><img class="reveal-left" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80"><div class="card-content"><h3>Soins du visage</h3><p>Nettoyage profond, hydratation, éclat et soins adaptés à votre type de peau.</p></div></div>
-    <div class="card"><img class="reveal-left" src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=900&q=80"><div class="card-content"><h3>Make-up</h3><p>Maquillage naturel, soirée ou mariée pour sublimer votre visage avec élégance.</p></div></div>
-    <div class="card"><img class="reveal-left" src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80"><div class="card-content"><h3>Massage & détente</h3><p>Un moment de relaxation pour relâcher les tensions et retrouver votre énergie.</p></div></div>
-    <div class="card"><img class="reveal-left" src="https://nanou-esthetique.com/wp-content/uploads/2025/04/epilation-cire-1-1024x683.webp"><div class="card-content"><h3>Épilation</h3><p>Des prestations rapides, douces et professionnelles pour une peau nette.</p></div></div>
+
+  <div class="section-title reveal">
+    <span>Nos prestations</span>
+    <h2>Nos univers beauté</h2>
   </div>
+
+  <div class="cards">
+
+    <!-- SOINS -->
+    <div class="card reveal-zoom">
+      <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80">
+
+      <div class="card-content">
+        <h3>Soins</h3>
+
+        <p>
+          Profitez d’un moment de détente absolue grâce à nos soins
+          relaxants et rituels bien-être pensés pour revitaliser
+          le corps et l’esprit.
+        </p>
+      </div>
+    </div>
+
+    <!-- COIFFURES -->
+    <div class="card reveal-zoom">
+      <img src="coiffure4.png">
+
+      <div class="card-content">
+        <h3>Coiffures</h3>
+
+        <p>
+          Brushing, coupes modernes, colorations et coiffures élégantes
+          réalisées avec précision pour révéler votre style.
+        </p>
+      </div>
+    </div>
+
+    <!-- MAKE UP -->
+    <div class="card reveal-zoom">
+      <img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1200&q=80">
+
+      <div class="card-content">
+        <h3>Make Up</h3>
+
+        <p>
+          Un maquillage raffiné et lumineux pour sublimer votre beauté
+          naturelle lors de chaque occasion.
+        </p>
+      </div>
+    </div>
+
+    <!-- ONGLES -->
+    <div class="card reveal-zoom">
+      <img src="ongle.png">
+
+      <div class="card-content">
+        <h3>Ongles</h3>
+
+        <p>
+          Manucure, pédicure, gel et semi-permanent pour des mains
+          élégantes et parfaitement soignées.
+        </p>
+      </div>
+    </div>
+
+    <!-- SKINCARE -->
+    <div class="card reveal-zoom">
+      <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80">
+
+      <div class="card-content">
+        <h3>Skincare</h3>
+
+        <p>
+          Des soins visage premium adaptés à votre peau pour hydrater,
+          illuminer et révéler l’éclat naturel de votre teint.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
 </section>
 
 <section class="prices" id="tarifs">
@@ -1051,6 +1504,38 @@ input[type="date"]{
   </div>
 </section>
 <section class="container" id="galerie"><div class="section-title"><span>Ambiance</span><h2>Galerie</h2></div><div class="gallery"><img class="reveal-zoom reveal-delay" src="galerie1.png"><img class="reveal-zoom reveal-delay" src="galerie2.png"><img  class="reveal-zoom reveal-delay" src="galerie3.png"><img class="reveal-zoom reveal-delay" src="galerie4.png"></div></section>
+<div class="gallery-more">
+
+  <div class="gallery-quote">
+
+    <div class="big-quote left">“</div>
+
+    <h2>Chaque détail révèle une signature unique.</h2>
+
+    <p>
+      Explorez davantage d’
+      <span>inspirations beauté</span>,
+      de créations raffinées et de moments élégants
+      à travers notre univers Instagram.
+    </p>
+
+    <div class="quote-line">
+      <span></span>
+      ✦
+      <span></span>
+    </div>
+
+    <a href="https://www.instagram.com/muse.rabat/"
+       target="_blank"
+       class="insta-btn">
+      Explorer notre Instagram
+    </a>
+
+    <div class="big-quote right">”</div>
+
+  </div>
+
+</div>
 <section class="container horaires reveal" id="horaires">
   <div class="section-title reveal">
     <span>Disponibilités</span>
