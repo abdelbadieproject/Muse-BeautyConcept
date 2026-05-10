@@ -259,13 +259,31 @@ body{
   }
 
   .tab-content{
-    min-height:850px;
-  }
+  display:none;
+  min-height:100vh;
+}
 
   .tarif-card{
     min-height:auto;
   }
+#hair,
+#nails,
+#care,
+#makeup{
+  position:relative;
+  z-index:1;
+}
 
+#hair::before,
+#nails::before,
+#care::before,
+#makeup::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url("tarifsimage.png") center top/cover no-repeat;
+  z-index:-1;
+}
 }
 </style>
 </head>
