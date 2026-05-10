@@ -17,7 +17,7 @@
 body{
   font-family:'Poppins',sans-serif;
   color:#1d1b1a;
-  background:url("tarifsimage.png") center center/cover fixed no-repeat;
+  background:url("tarifsimage.png") left center/cover no-repeat fixed;
   overflow-x:hidden;
 }
 
@@ -202,10 +202,12 @@ body{
   }
 
   .tarif-card{
-    width:90%;
-    padding:28px 24px;
-    border-radius:30px;
-  }
+  background:rgba(255,255,255,.55);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.25);
+  box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
 
   .tarif-card h2{
     font-size:40px;
