@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tarifs — Ego Maison de Beauté</title>
+<title>Tarifs - Muse Beauty Concept</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
@@ -14,403 +14,167 @@
   box-sizing:border-box;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
 body{
   font-family:'Poppins',sans-serif;
   color:#1d1b1a;
-  background:
-    radial-gradient(circle at 15% 10%, rgba(178,138,104,.18), transparent 28%),
-    radial-gradient(circle at 90% 20%, rgba(212,175,55,.10), transparent 25%),
-    linear-gradient(180deg,#fffaf6,#f8f3ef);
+  background:url("tarifsimage.png") center center/cover fixed no-repeat;
   overflow-x:hidden;
 }
 
-/* HEADER */
-header{
-  position:fixed;
-  top:18px;
-  left:50%;
-  transform:translateX(-50%);
-  width:88%;
-  z-index:1000;
-  background:rgba(255,255,255,.72);
-  backdrop-filter:blur(18px);
-  border:1px solid rgba(178,138,104,.18);
-  border-radius:26px;
-  box-shadow:0 18px 50px rgba(0,0,0,.08);
-}
-
-.container{
-  width:92%;
-  max-width:1200px;
-  margin:auto;
-}
-
-nav{
-  height:78px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  text-decoration:none;
-  color:#1d1b1a;
-  font-weight:700;
-}
-
-.logo img{
-  width:82px;
-}
-
-.menu{
-  display:flex;
-  align-items:center;
-  gap:26px;
-}
-
-.menu a{
-  text-decoration:none;
-  color:#1d1b1a;
-  font-size:14px;
-  font-weight:600;
-}
-
-.btn{
-  background:linear-gradient(135deg,#1d1b1a,#b28a68);
-  color:white !important;
-  padding:13px 25px;
-  border-radius:40px;
-  box-shadow:0 12px 30px rgba(178,138,104,.28);
-}
-
-/* HERO */
-.hero{
-  min-height:72vh;
-
-  background:
-  linear-gradient(rgba(248,243,239,.72),rgba(248,243,239,.78)),
-  url("spa.png") center/cover no-repeat;
-
-  padding:150px 20px 90px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-}
-
-.hero::before{
-  content:"ego";
-  position:absolute;
-  top:-120px;
-  left:50%;
-  transform:translateX(-50%);
-  font-family:'Playfair Display',serif;
-  font-size:360px;
-  color:rgba(255,255,255,.75);
-  line-height:1;
-}
-
-.hero::after{
-  content:"";
-  position:absolute;
-  width:420px;
-  height:420px;
-  border-radius:50%;
-  background:rgba(178,138,104,.12);
-  filter:blur(35px);
-  bottom:-160px;
-  right:-100px;
-}
-
-.hero-content{
-  position:relative;
-  z-index:1;
-  max-width:850px;
-}
-
-.hero span{
-  display:inline-block;
-  color:#b28a68;
-  text-transform:uppercase;
-  letter-spacing:4px;
-  font-size:13px;
-  font-weight:700;
-  margin-bottom:18px;
-}
-
-.hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(58px,9vw,105px);
-  font-weight:500;
-  line-height:.95;
-}
-
-.hero p{
-  max-width:680px;
-  margin:28px auto 0;
-  color:#6d635d;
-  line-height:1.9;
-  font-size:17px;
-}
-
-/* PAGE */
-.tarifs-page{
-  padding:20px 20px 110px;
-}
-
-/* TABS */
 .tabs{
-  max-width:1050px;
-  margin:0 auto 60px;
-  padding:14px;
+  max-width:950px;
+  margin:40px auto 80px;
+  padding:15px;
   display:flex;
   justify-content:center;
-  flex-wrap:wrap;
-  gap:12px;
-  background:rgba(255,255,255,.58);
-  backdrop-filter:blur(16px);
-  border:1px solid rgba(178,138,104,.18);
+  gap:18px;
+  background:rgba(255,255,255,.78);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
   border-radius:60px;
-  box-shadow:0 20px 55px rgba(0,0,0,.06);
+  box-shadow:0 20px 55px rgba(0,0,0,.08);
 }
 
 .tab-btn{
   border:none;
-  padding:15px 26px;
-  border-radius:40px;
   background:transparent;
-  color:#4f4843;
+  padding:15px 28px;
+  border-radius:40px;
   font-weight:700;
   cursor:pointer;
-  transition:.35s;
+  transition:.3s;
+  color:#1d1b1a;
 }
 
+.tab-btn.active,
 .tab-btn:hover{
-  color:#b28a68;
-  transform:translateY(-2px);
-}
-
-.tab-btn.active{
-  background:#1d1b1a;
+  background:#b28a68;
   color:white;
-  box-shadow:0 14px 35px rgba(0,0,0,.18);
 }
 
-/* CONTENT */
-.tab-content{
-  display:none;
-  max-width:1050px;
-  margin:auto;
-  animation:fadeTarif .7s ease;
-}
-
-.tab-content.active{
-  display:block;
-}
-
-@keyframes fadeTarif{
-  from{
-    opacity:0;
-    transform:translateY(35px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-.tab-content h2{
-  font-family:'Playfair Display',serif;
-  font-size:58px;
-  font-weight:500;
+.section-title{
   text-align:center;
-  margin-bottom:38px;
+  margin-bottom:55px;
 }
 
-.tab-content h2::after{
+.section-title h1{
+  font-family:'Playfair Display',serif;
+  font-size:72px;
+  font-weight:500;
+  color:#1d1b1a;
+}
+
+.section-title::after{
   content:"";
   display:block;
-  width:90px;
+  width:80px;
   height:2px;
-  background:linear-gradient(90deg,transparent,#b28a68,transparent);
+  background:#b28a68;
   margin:18px auto 0;
 }
 
-.tarif-block{
-  position:relative;
-  background:
-    linear-gradient(145deg,rgba(255,255,255,.92),rgba(255,250,246,.78));
-  border:1px solid rgba(178,138,104,.22);
-  border-radius:42px;
+.content{
+  padding:0 20px 120px;
+}
+
+.tarif-card{
+  max-width:1050px;
+  margin:auto;
   padding:55px;
-  box-shadow:
-    0 35px 90px rgba(0,0,0,.08),
-    inset 0 1px 0 rgba(255,255,255,.9);
-  overflow:hidden;
+  border-radius:38px;
+  background:rgba(255,255,255,.72);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.35);
+  box-shadow:0 25px 80px rgba(0,0,0,.10);
 }
 
-.tarif-block::before{
-  content:"";
-  position:absolute;
-  inset:18px;
-  border:1px solid rgba(178,138,104,.16);
-  border-radius:32px;
-  pointer-events:none;
-}
-
-.tarif-block::after{
-  content:"✦";
-  position:absolute;
-  top:24px;
-  right:36px;
-  color:rgba(178,138,104,.35);
-  font-size:34px;
-}
-
-.tarif-block h3{
-  position:relative;
-  z-index:1;
+.tarif-card h2{
   font-family:'Playfair Display',serif;
-  font-size:34px;
+  font-size:42px;
   color:#b28a68;
-  margin:45px 0 24px;
-  font-weight:600;
+  margin-bottom:30px;
 }
 
-.tarif-block h3:first-child{
-  margin-top:0;
-}
-
-.tarif-grid{
-  position:relative;
-  z-index:1;
+.price-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:0 70px;
+  margin-bottom:55px;
 }
 
 .price-line{
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  gap:24px;
+  gap:20px;
   padding:17px 0;
   border-bottom:1px solid rgba(178,138,104,.18);
 }
 
 .price-line span{
   color:#4d4642;
-  font-size:15px;
-  line-height:1.55;
 }
 
 .price-line strong{
-  color:#1d1b1a;
-  font-size:15px;
   white-space:nowrap;
-  font-weight:800;
+  color:#1d1b1a;
 }
 
-.note{
-  position:relative;
-  z-index:1;
-  margin-top:28px;
-  color:#6d635d;
-  font-size:14px;
-  line-height:1.8;
-  font-style:italic;
-  text-align:center;
+.tab-content{
+  display:none;
 }
 
-/* FOOTER */
-footer{
-  background:#141312;
-  color:white;
-  text-align:center;
-  padding:65px 20px;
+.tab-content.active{
+  display:block;
+  animation:fadeUp .8s ease;
 }
 
-footer img{
-  width:150px;
-  margin-bottom:10px;
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
-footer a{
-  color:#b28a68;
-  text-decoration:none;
-}
-
-/* MOBILE */
 @media(max-width:850px){
-  header{
-    top:0;
-    width:100%;
-    border-radius:0;
-  }
-
-  nav{
-    height:auto;
-    padding:13px 0;
-    flex-direction:column;
-    gap:12px;
-  }
-
-  .menu{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:12px;
-  }
-
-  .hero{
-    min-height:60vh;
-    padding-top:190px;
-  }
-
-  .hero::before{
-    font-size:190px;
-    top:55px;
-  }
-
-  .hero h1{
-    font-size:58px;
-  }
 
   .tabs{
-    border-radius:28px;
-    justify-content:flex-start;
+    width:92%;
     overflow-x:auto;
-    flex-wrap:nowrap;
+    justify-content:flex-start;
+    margin:25px auto 55px;
   }
 
   .tab-btn{
     white-space:nowrap;
+    padding:14px 22px;
+    font-size:14px;
   }
 
-  .tarif-block{
-    padding:35px 24px;
-    border-radius:30px;
+  .section-title h1{
+    font-size:48px;
   }
 
-  .tarif-block::before{
-    inset:10px;
-    border-radius:22px;
+  .tarif-card{
+    padding:30px 22px;
   }
 
-  .tarif-grid{
+  .tarif-card h2{
+    font-size:34px;
+  }
+
+  .price-grid{
     grid-template-columns:1fr;
+    gap:0;
   }
 
-  .tab-content h2{
-    font-size:42px;
+  .price-line{
+    font-size:14px;
   }
 }
 </style>
@@ -418,230 +182,127 @@ footer a{
 
 <body>
 
-<header>
-  <div class="container">
-    <nav>
-      <a href="index.html" class="logo">
-        <img src="logo7.png" alt="Logo Ego">
-        <span>Ego — Maison de Beauté</span>
-      </a>
 
-      <div class="menu">
-        <a href="index.html">Accueil</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#galerie">Galerie</a>
-        <a href="index.html#contact">Contact</a>
-        <a href="index.html#reservation" class="btn">Rendez-vous</a>
-      </div>
-    </nav>
-  </div>
-</header>
 
-<section class="hero">
-  <div class="hero-content">
-    <span>Ego Maison de Beauté</span>
-    <h1>Tarifs</h1>
-    <p>Découvrez nos prestations beauté dans un univers élégant, raffiné et pensé pour votre bien-être.</p>
-  </div>
-</section>
 
-<section class="tarifs-page">
 
-  <div class="tabs">
-    <button class="tab-btn active" data-tab="cheveux">💇‍♀️ Cheveux</button>
-    <button class="tab-btn" data-tab="ongles">💅 Ongles</button>
-    <button class="tab-btn" data-tab="soins">✨ Soins</button>
-    <button class="tab-btn" data-tab="epilation">🧴 Épilation</button>
-    <button class="tab-btn" data-tab="makeup">💄 Make-up</button>
-  </div>
+<div class="tabs">
+  <button class="tab-btn active" data-tab="cheveux">💇 Cheveux</button>
+  <button class="tab-btn" data-tab="ongles">💅 Ongles</button>
+  <button class="tab-btn" data-tab="soins">✨ Soins Corporels</button>
+  <button class="tab-btn" data-tab="makeup">💄 Make-up</button>
+</div>
 
-  <!-- CHEVEUX -->
+<section class="content">
+
   <div class="tab-content active" id="cheveux">
-    <h2>Cheveux</h2>
+    <div class="section-title">
+      <h1>Cheveux</h1>
+    </div>
 
-    <div class="tarif-block">
-      <h3>Coiffage</h3>
+    <div class="tarif-card">
+      <h2>Coiffage</h2>
 
-      <div class="tarif-grid">
-        <div class="price-line"><span>Shampoing spécifique</span><strong>50 DH</strong></div>
-        <div class="price-line"><span>Brushing cheveux courts</span><strong>70 DH</strong></div>
-        <div class="price-line"><span>Brushing cheveux mi-longs à longs</span><strong>100 DH</strong></div>
-        <div class="price-line"><span>Brushing wavy au fer / lisseur</span><strong>150 DH</strong></div>
-        <div class="price-line"><span>Chignon / coiffure</span><strong>400 DH</strong></div>
-        <div class="price-line"><span>Coupe</span><strong>300 DH</strong></div>
-        <div class="price-line"><span>Coupe frange</span><strong>100 DH</strong></div>
-        <div class="price-line"><span>Égalisation pointes</span><strong>200 DH</strong></div>
+      <div class="price-grid">
+        <div>
+          <div class="price-line"><span>Shampoing spécifique</span><strong>50 DH</strong></div>
+          <div class="price-line"><span>Brushing cheveux mi-longs à longs</span><strong>100 DH</strong></div>
+          <div class="price-line"><span>Chignon / coiffure</span><strong>400 DH</strong></div>
+          <div class="price-line"><span>Coupe frange</span><strong>100 DH</strong></div>
+        </div>
+
+        <div>
+          <div class="price-line"><span>Brushing cheveux courts</span><strong>70 DH</strong></div>
+          <div class="price-line"><span>Brushing wavy au fer / lisseur</span><strong>150 DH</strong></div>
+          <div class="price-line"><span>Coupe</span><strong>300 DH</strong></div>
+          <div class="price-line"><span>Égalisation pointes</span><strong>200 DH</strong></div>
+        </div>
       </div>
 
-      <h3>Coloration</h3>
+      <h2>Coloration</h2>
 
-      <div class="tarif-grid">
-        <div class="price-line"><span>Coloration racines avec ammoniaque</span><strong>350 DH</strong></div>
-        <div class="price-line"><span>Coloration racines sans ammoniaque</span><strong>400 DH</strong></div>
-        <div class="price-line"><span>Coloration complète avec ammoniaque</span><strong>450 DH</strong></div>
-        <div class="price-line"><span>Coloration complète sans ammoniaque</span><strong>500 DH</strong></div>
-        <div class="price-line"><span>Mèches ou balayage</span><strong>À partir de 800 DH</strong></div>
-        <div class="price-line"><span>Patine gloss</span><strong>200 DH</strong></div>
-        <div class="price-line"><span>Coloration avec vos produits</span><strong>À partir de 150 DH</strong></div>
+      <div class="price-grid">
+        <div>
+          <div class="price-line"><span>Coloration racines avec ammoniaque</span><strong>350 DH</strong></div>
+          <div class="price-line"><span>Coloration complète avec ammoniaque</span><strong>450 DH</strong></div>
+          <div class="price-line"><span>Mèches ou balayage</span><strong>À partir de 800 DH</strong></div>
+        </div>
+
+        <div>
+          <div class="price-line"><span>Coloration racines sans ammoniaque</span><strong>400 DH</strong></div>
+          <div class="price-line"><span>Coloration complète sans ammoniaque</span><strong>500 DH</strong></div>
+          <div class="price-line"><span>Patine gloss</span><strong>200 DH</strong></div>
+        </div>
       </div>
-
-      <h3>Soins cheveux</h3>
-
-      <div class="tarif-grid">
-        <div class="price-line"><span>Soin express 20 min</span><strong>200 DH</strong></div>
-        <div class="price-line"><span>Soin K18 technique</span><strong>400 DH</strong></div>
-        <div class="price-line"><span>Soin hydratation intense caviar</span><strong>400 DH</strong></div>
-        <div class="price-line"><span>Traitement collagène</span><strong>700 DH</strong></div>
-        <div class="price-line"><span>Soin Oribe</span><strong>À partir de 600 DH</strong></div>
-        <div class="price-line"><span>Soin Davines</span><strong>À partir de 400 DH</strong></div>
-      </div>
-
-      <h3>Lissage</h3>
-
-      <div class="tarif-grid">
-        <div class="price-line"><span>Soin kératine</span><strong>À partir de 1000 DH</strong></div>
-        <div class="price-line"><span>Lissage bandeau</span><strong>500 DH</strong></div>
-        <div class="price-line"><span>Lissage Gold</span><strong>À partir de 1500 DH</strong></div>
-        <div class="price-line"><span>Lissage bandeau Gold</span><strong>800 DH</strong></div>
-      </div>
-
-      <p class="note">Extensions capillaires : diagnostic, méthode et tarifs personnalisés en salon.</p>
     </div>
   </div>
 
-  <!-- ONGLES -->
   <div class="tab-content" id="ongles">
-    <h2>Mains & Pieds</h2>
-
-    <div class="tarif-block">
-      <div class="tarif-grid">
-        <div class="price-line"><span>Pose vernis</span><strong>70 DH</strong></div>
-        <div class="price-line"><span>Pose vernis French</span><strong>100 DH</strong></div>
-        <div class="price-line"><span>Pose vernis permanent</span><strong>150 DH</strong></div>
-        <div class="price-line"><span>Dépose vernis permanent</span><strong>50 DH</strong></div>
-        <div class="price-line"><span>Gel</span><strong>600 DH</strong></div>
-        <div class="price-line"><span>Remplissage</span><strong>400 DH</strong></div>
-        <div class="price-line"><span>Dépose du gel</span><strong>150 DH</strong></div>
-        <div class="price-line"><span>BIAB Russian manucure</span><strong>400 DH</strong></div>
-        <div class="price-line"><span>Remplissage BIAB</span><strong>300 DH</strong></div>
-        <div class="price-line"><span>Dépose BIAB</span><strong>70 DH</strong></div>
-        <div class="price-line"><span>Faux ongles</span><strong>200 DH</strong></div>
-        <div class="price-line"><span>Manucure</span><strong>120 DH</strong></div>
-        <div class="price-line"><span>Manucure spa</span><strong>200 DH</strong></div>
-        <div class="price-line"><span>Manucure signature Ego</span><strong>300 DH</strong></div>
-        <div class="price-line"><span>Manucure vernis permanent</span><strong>270 DH</strong></div>
-        <div class="price-line"><span>Pédicure</span><strong>180 DH</strong></div>
-        <div class="price-line"><span>Pédicure spa</span><strong>250 DH</strong></div>
-        <div class="price-line"><span>Pédicure signature Ego</span><strong>400 DH</strong></div>
-        <div class="price-line"><span>Pédicure vernis permanent</span><strong>330 DH</strong></div>
-        <div class="price-line"><span>Nail art</span><strong>À partir de 10 DH</strong></div>
+    <div class="section-title"><h1>Ongles</h1></div>
+    <div class="tarif-card">
+      <h2>Mains & Pieds</h2>
+      <div class="price-grid">
+        <div>
+          <div class="price-line"><span>Pose vernis</span><strong>70 DH</strong></div>
+          <div class="price-line"><span>Vernis permanent</span><strong>150 DH</strong></div>
+          <div class="price-line"><span>Gel</span><strong>600 DH</strong></div>
+        </div>
+        <div>
+          <div class="price-line"><span>Manucure</span><strong>120 DH</strong></div>
+          <div class="price-line"><span>Pédicure</span><strong>180 DH</strong></div>
+          <div class="price-line"><span>Nail art</span><strong>À partir de 10 DH</strong></div>
+        </div>
       </div>
-
-      <p class="note">Prix selon complexité et design, à définir avec la technicienne.</p>
     </div>
   </div>
 
-  <!-- SOINS -->
   <div class="tab-content" id="soins">
-    <h2>Soins</h2>
-
-    <div class="tarif-block">
-      <h3>Soins visage</h3>
-
-      <div class="tarif-grid">
-        <div class="price-line"><span>Hydradermie jeunesse 60 min</span><strong>650 DH</strong></div>
-        <div class="price-line"><span>Hydradermie lift 60 min</span><strong>700 DH</strong></div>
-        <div class="price-line"><span>Eye lift 40 min</span><strong>400 DH</strong></div>
-        <div class="price-line"><span>Hydra peeling 45 min</span><strong>700 DH</strong></div>
-        <div class="price-line"><span>Age Summum 50 min</span><strong>800 DH</strong></div>
-        <div class="price-line"><span>Lift Summum 50 min</span><strong>800 DH</strong></div>
-        <div class="price-line"><span>Hydra Summum 45 min</span><strong>700 DH</strong></div>
-        <div class="price-line"><span>Detoxygène 50 min</span><strong>600 DH</strong></div>
-        <div class="price-line"><span>Équilibre pureté 40 min</span><strong>550 DH</strong></div>
-        <div class="price-line"><span>Foot peeling 30 min</span><strong>350 DH</strong></div>
-      </div>
-
-      <h3>Soins corps</h3>
-
-      <div class="tarif-grid">
-        <div class="price-line"><span>Massage relaxant</span><strong>350 DH</strong></div>
-        <div class="price-line"><span>Massage lymphatique</span><strong>400 DH</strong></div>
-        <div class="price-line"><span>Massage amincissant</span><strong>400 DH</strong></div>
-        <div class="price-line"><span>Forfait massage 10 séances + 2 offertes</span><strong>3000 / 4000 DH</strong></div>
+    <div class="section-title"><h1>Soins</h1></div>
+    <div class="tarif-card">
+      <h2>Soins visage & corps</h2>
+      <div class="price-grid">
+        <div>
+          <div class="price-line"><span>Soin visage</span><strong>650 DH</strong></div>
+          <div class="price-line"><span>Hydra peeling</span><strong>700 DH</strong></div>
+        </div>
+        <div>
+          <div class="price-line"><span>Massage relaxant</span><strong>350 DH</strong></div>
+          <div class="price-line"><span>Massage lymphatique</span><strong>400 DH</strong></div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- ÉPILATION -->
-  <div class="tab-content" id="epilation">
-    <h2>Épilation</h2>
-
-    <div class="tarif-block">
-      <div class="tarif-grid">
-        <div class="price-line"><span>Sourcils</span><strong>50 DH</strong></div>
-        <div class="price-line"><span>Brow styling</span><strong>100 DH</strong></div>
-        <div class="price-line"><span>Duvet</span><strong>30 DH</strong></div>
-        <div class="price-line"><span>Narines</span><strong>20 DH</strong></div>
-        <div class="price-line"><span>Visage</span><strong>100 DH</strong></div>
-        <div class="price-line"><span>Aisselles</span><strong>70 DH</strong></div>
-        <div class="price-line"><span>Bras</span><strong>100 DH</strong></div>
-        <div class="price-line"><span>Avant-bras</span><strong>60 DH</strong></div>
-        <div class="price-line"><span>Demi jambes</span><strong>80 DH</strong></div>
-        <div class="price-line"><span>Jambes</span><strong>150 DH</strong></div>
-        <div class="price-line"><span>Ventre</span><strong>50 DH</strong></div>
-        <div class="price-line"><span>Bas du dos</span><strong>50 DH</strong></div>
-        <div class="price-line"><span>Dos</span><strong>100 DH</strong></div>
-        <div class="price-line"><span>Bord de maillot</span><strong>70 DH</strong></div>
-        <div class="price-line"><span>Maillot</span><strong>150 DH</strong></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MAKEUP -->
   <div class="tab-content" id="makeup">
-    <h2>Make-up</h2>
-
-    <div class="tarif-block">
-      <div class="tarif-grid">
-        <div class="price-line"><span>Maquillage jour</span><strong>À partir de 400 DH</strong></div>
-        <div class="price-line"><span>Maquillage soir</span><strong>À partir de 600 DH</strong></div>
-        <div class="price-line"><span>Pose de faux cils</span><strong>200 DH</strong></div>
+    <div class="section-title"><h1>Make-up</h1></div>
+    <div class="tarif-card">
+      <h2>Maquillage</h2>
+      <div class="price-grid">
+        <div>
+          <div class="price-line"><span>Maquillage jour</span><strong>À partir de 400 DH</strong></div>
+        </div>
+        <div>
+          <div class="price-line"><span>Maquillage soir</span><strong>À partir de 600 DH</strong></div>
+        </div>
       </div>
     </div>
   </div>
 
 </section>
-
-<footer>
-  <img src="logo7.png" alt="Logo Ego">
-  <h3>Ego — Maison de Beauté</h3>
-  <p>Rabat, Maroc</p>
-  <p><a href="index.html#reservation">Prendre rendez-vous</a></p>
-</footer>
 
 <script>
-const buttons = document.querySelectorAll(".tab-btn");
-const contents = document.querySelectorAll(".tab-content");
+const buttons=document.querySelectorAll(".tab-btn");
+const contents=document.querySelectorAll(".tab-content");
 
-buttons.forEach(button => {
-  button.addEventListener("click", () => {
-    const target = button.dataset.tab;
+buttons.forEach(button=>{
+  button.addEventListener("click",()=>{
+    const target=button.dataset.tab;
 
-    buttons.forEach(btn => {
-      btn.classList.remove("active");
-    });
-
-    contents.forEach(content => {
-      content.classList.remove("active");
-    });
+    buttons.forEach(btn=>btn.classList.remove("active"));
+    contents.forEach(content=>content.classList.remove("active"));
 
     button.classList.add("active");
     document.getElementById(target).classList.add("active");
-
-    window.scrollTo({
-      top: document.querySelector(".tarifs-page").offsetTop - 90,
-      behavior: "smooth"
-    });
   });
 });
 </script>
