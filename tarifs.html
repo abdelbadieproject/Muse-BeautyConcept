@@ -17,8 +17,17 @@
 body{
   font-family:'Poppins',sans-serif;
   color:#1d1b1a;
-  background:url("tarifsimage.png") center center/cover fixed no-repeat;
+  min-height:100vh;
   overflow-x:hidden;
+
+  background-image:
+  linear-gradient(rgba(255,255,255,.20), rgba(255,255,255,.20)),
+  url("tarifsimage.png");
+
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center left;
+  background-attachment:fixed;
 }
 
 .tabs{
@@ -148,7 +157,11 @@ body{
     justify-content:flex-start;
     margin:25px auto 55px;
   }
-
+body{
+  background-size:cover;
+  background-position:28% center;
+  background-attachment:scroll;
+}
   .tab-btn{
     white-space:nowrap;
     padding:14px 22px;
