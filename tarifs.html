@@ -17,17 +17,24 @@
 body{
   font-family:'Poppins',sans-serif;
   color:#1d1b1a;
-  min-height:100vh;
   overflow-x:hidden;
+  position:relative;
+  background:#e7d7c5;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
 
   background-image:
-  linear-gradient(rgba(255,255,255,.20), rgba(255,255,255,.20)),
+  linear-gradient(rgba(255,255,255,.18), rgba(255,255,255,.18)),
   url("tarifsimage.png");
 
-  background-repeat:no-repeat;
   background-size:cover;
+  background-repeat:no-repeat;
   background-position:center left;
-  background-attachment:fixed;
 }
 
 .tabs{
@@ -161,6 +168,10 @@ body{
   background-size:cover;
   background-position:10% center;
   background-attachment:scroll;
+}
+  body::before{
+  background-position:25% center;
+  background-size:cover;
 }
   .tab-btn{
     white-space:nowrap;
