@@ -196,12 +196,45 @@ body::before{
     font-size:14px;
   }
 }
+  .back-home{
+position:fixed;
+top:30px;
+right:30px;
+z-index:999;
+background:rgba(255,255,255,.75);
+backdrop-filter:blur(12px);
+padding:14px 24px;
+border-radius:50px;
+text-decoration:none;
+color:#1d1b1a;
+font-weight:600;
+font-family:'Poppins',sans-serif;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.3s
+}
+
+.back-home:hover{
+background:#b28a68;
+color:white;
+transform:translateY(-3px)
+}
+
+@media(max-width:768px){
+.back-home{
+top:20px;
+right:20px;
+padding:12px 20px;
+font-size:14px
+}
+}
 </style>
 </head>
 
 <body>
 
-
+<a href="index.html" class="back-home">
+ Retour à l’accueil
+</a>
 
 
 
